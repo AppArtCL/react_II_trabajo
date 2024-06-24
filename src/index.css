@@ -1,0 +1,456 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color: black;
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --fondo-header: rgb(23,162,184);
+  --texto-header: white;
+  --fondo-boton-ver: rgb(13,202,240);
+  --fondo-boton-anadir: rgb(220, 53, 69);
+  --texto-boton: white;
+  --fondo-boton-menos: rgb(220, 53, 69);
+  --fondo-boton-mas: rgb(13,110,253);
+  --fondo-cuadro-detalle: rgb(248, 249, 250);
+  --fondo-boton-verde: rgb(25, 135, 84);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 6rem;
+  margin: 0px;
+  background-color: var(--fondo-header);
+  color: var(--texto-header);
+}
+header .logo-marca,
+header .carro-precio {
+  display: flex;
+  align-items: center;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+header .logo,
+header .carro {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 1px black;
+}
+header .marca,
+header .precio {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+}
+
+.hero img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hero .hero-texts {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  width: 80%;
+}
+
+.hero .hero-text {
+  color: white;
+  font-size: 3em;
+  margin: 1rem 0px 0px 0px;
+  padding: 0px;
+  font-weight: 500;
+}
+
+.hero .hero-tag {
+  color: white;
+  font-size: 1.2em;
+  margin: 0px;
+  padding: 0px;
+}
+
+.hero .hero-line {
+  width: 100%;
+  border: none;
+  height: 1.5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 1.5rem auto 2rem auto;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 6rem;
+}
+main .pizzas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 1.5rem;
+}
+main .pizzas .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 18rem;
+  padding: 0px;
+  border-radius: 5px;
+}
+main .pizzas .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+main .pizzas .card-body .card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+main .pizzas .card-body hr,
+main .pizza-detalle .card-body hr {
+  color: grey;
+  width: 100%;
+  border: 1px solid grey;
+}
+main .pizzas .card-body .card-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px;
+}
+main .pizzas .card-body .ingredientes {
+  font-size: 1rem;
+  margin: 0px 0px 0px 2rem;
+  padding: 0px;
+}
+main .pizzas .card-footer {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+main .pizzas .card-footer .card-precio {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 2rem 0px 0px 0px;
+  padding: 0px;
+}
+main .pizzas .card-footer .card-botones {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0px 1rem 0px;
+}
+main .pizzas .button-ver {
+  background-color: var(--fondo-boton-ver);
+  color: var(--texto-boton);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .pizzas .button-anadir,
+main .pizza-detalle .button-anadir {
+  background-color: var(--fondo-boton-anadir);
+  color: var(--texto-boton);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .pizzas .carro,
+main .pizza-detalle .carro {
+  text-shadow: 1px 1px 1px black;
+}
+main .pizzas .ojos {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 1px black;
+}
+
+main .pizza-detalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+main .pizza-detalle .pizza-detalle-img {
+  min-width: 25rem;
+  min-height: 25rem;
+}
+main .pizza-detalle .pizza-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0%;
+}
+main .pizza-detalle .card-body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+main .pizza-detalle .card-body .card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0px 0px 0px;
+  padding: 0px;
+}
+main .pizza-detalle .card-body .card-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.8rem 0px;
+  padding: 0px;
+}
+main .pizza-detalle .pizza-detalle-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  margin: 0px 1rem 0px 0px;
+}
+main .pizza-detalle .card-body .ingredientes {
+  font-size: 0.9rem;
+  margin: 0px 0px 0px 2rem;
+  padding: 0px;
+}
+main .pizza-detalle .card-body .desc {
+  font-size: 0.9rem;
+  margin: 0px;
+  padding: 0px;
+}
+main .pizza-detalle .pizza-detalle-precio {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0px 0px 1rem   0px;
+  padding: 0px;
+}
+main .pizza-detalle .card-precio {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+main .volver {
+  background-color: var(--fondo-boton-ver);
+  color: var(--texto-boton);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 1rem;
+  margin: 2rem 0px 0px 0px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+main .carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px 5rem;
+  width: 100%;
+}
+main .carrito .cuadro-detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  margin: 0px 6rem;
+  padding: 2rem;
+  background-color: var(--fondo-cuadro-detalle);
+}
+main .carrito .cuadro-detalle-unitario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+}
+main .boton-disminuir {
+  background-color: var(--fondo-boton-menos);
+  color: var(--texto-boton);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 0.8rem;
+  margin: 0px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .boton-aumentar {
+  background-color: var(--fondo-boton-mas);
+  color: var(--texto-boton);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 0.8rem;
+  margin: 0px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .detalle-unitario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0px 1rem;
+  margin: 0px;
+  width: 100%;
+}
+
+main .unitario-pizza {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+main .unitario-pizza .img-nombre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  gap: 0.5rem;
+}
+main .unitario-pizza img {
+  width: 3rem;
+}
+main .unitario-pizza .precio-cantidad {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  gap: 0.5rem;
+}
+main .unitario-pizza .precio-carrito {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+  color: var(--fondo-boton-verde);
+}
+main .unitario-pizza .cantidad-carrito {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  width: 0.8rem;
+}
+main .carrito .nombre-carrito {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+main .carrito .total-carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+}
+main .carrito .total-carrito .precio-total {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+main .carrito .pagar {
+  background-color: var(--fondo-boton-verde);
+  color: var(--texto-boton);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0px 0px 0px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .carrito hr  {
+  color: grey;
+  width: 100%;
+  border: 1px solid grey;
+  margin: 0.5rem 0px 0px 0px;
+  padding: 0px;
+}
